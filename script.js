@@ -47,18 +47,26 @@ submitButton2.onclick = () => {
   // Score of 40 to 69 — “You did a passable job, not bad!”
   // Score of 70 to 89 — “That’s a great score. You really know your stuff.”
   // Score of 90 to 100 — “What an amazing score!”
-  if(score1<0 ||score1>100){
-    message2 = "This is not possible. An error has occurred."
-  } else if (score1 >= 0 && score1 <= 19) {
-    message2 = "That was a terrible score!";
-} else if (score1 >= 20 && score1 <= 39) {
-    message2 = "You know some things. Needs improvement.";
-} else if (score1 >= 40 && score1 <= 69) {
-    message2 = "You did a passable job, not bad!";
-} else if (score1 >= 70 && score1 <= 89) {
-    message2 = "That’s a great score. You really know your stuff.";
-} else if (score1 >= 90 && score1 <= 100) {
-    message2 = "What an amazing score!";
-}
+  switch (true) {
+    case score1 < 0 || score1 > 100:
+      message2 = "This is not possible. An error has occurred.";
+      break;
+    case score1 >= 0 && score1 <= 19:
+      message2 = "That was a terrible score!";
+      break;
+    case score1 >= 20 && score1 <= 39:
+      message2 = "You know some things. Needs improvement.";
+      break;
+    case score1 >= 40 && score1 <= 69:
+      message2 = "You did a passable job, not bad!";
+      break;
+    case score1 >= 70 && score1 <= 89:
+      message2 = "That’s a great score. You really know your stuff.";
+      break;
+    case score1 >= 90 && score1 <= 100:
+      message2 = "What an amazing score!";
+      break;
+  }
+  
   commentContainer2.innerHTML = message2;
 };
